@@ -16,9 +16,9 @@ rofi-wayland
 swaync
 ```
 
-Dependencies for hyprland:
-[hy3 extension (to make hyprland behave like i3)](https://github.com/outfoxxed/hy3) 
-[split-monitor-workspaces extension (to have seperate workspace groups for each monitor)](https://github.com/Duckonaut/split-monitor-workspaces) 
+Dependencies for hyprland:  
+[hy3 extension (to make hyprland behave like i3)](https://github.com/outfoxxed/hy3)  
+[split-monitor-workspaces extension (to have seperate workspace groups for each monitor)](https://github.com/Duckonaut/split-monitor-workspaces)  
 
 Dependencies for sway:
 [sway-overfocus (binary included in these dotfiles)](https://github.com/korreman/sway-overfocus) 
