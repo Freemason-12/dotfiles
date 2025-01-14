@@ -2,5 +2,5 @@
 
 return {
   'tinted-theming/tinted-vim',
-  'AlexvZyl/nordic.nvim',
+  'Yazeed1s/minimal.nvim'
 }
