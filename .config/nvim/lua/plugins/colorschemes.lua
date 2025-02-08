@@ -1,6 +1,5 @@
 -- All custom colorschemes that fit my taste
 
 return {
-  'tinted-theming/tinted-vim',
-  'Yazeed1s/minimal.nvim'
+  "tinted-theming/tinted-vim",
 }
