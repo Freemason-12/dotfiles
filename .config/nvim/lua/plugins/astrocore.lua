@@ -1,4 +1,4 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+-- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
@@ -58,6 +58,11 @@ return {
             )
           end,
           desc = "Close buffer from tabline",
+        },
+
+        ["<Leader>fG"] = {
+          function() require("telescope").extensions.live_grep_args.live_grep_args() end,
+          desc = "Find File by its contents (live grep)",
         },
 
         -- tables with just a `desc` key will be registered with which-key if it's installed
