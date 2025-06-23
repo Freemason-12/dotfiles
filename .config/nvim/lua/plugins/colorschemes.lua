@@ -1,5 +1,14 @@
 -- All custom colorschemes that fit my taste
 
 return {
-  "tinted-theming/tinted-vim",
+  {
+    "AstroNvim/astroui",
+    ---@type AstroUIOpts
+    opts = {
+      colorscheme = "base16-oceanicnext",
+    },
+  },
+  {
+    "tinted-theming/tinted-vim",
+  }
 }
