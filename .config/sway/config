@@ -27,13 +27,15 @@ exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 exec /usr/libexec/polkit-mate-authentication-agent-1
 exec xhost +local:
+exec sway-audio-idle-inhibit
+exec swaync
 
 # SwayFx blur
 blur on
 blur_passes 2
 blur_noise 0.1
 blur_radius 5
-corner_radius 1
+corner_radius 3
 
 # SwayFX window shadows
 shadows on
