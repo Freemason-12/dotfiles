@@ -34,7 +34,7 @@ exec swaync
 blur on
 blur_passes 2
 blur_noise 0.1
-blur_radius 5
+blur_radius 2
 corner_radius 3
 
 # SwayFX window shadows
@@ -50,7 +50,7 @@ exec ~/.azotebg
 exec nwg-look -a
 
 # bar
-exec ags -c ~/.config/ags-sway/config.js
+exec qs -c ~/.config/quickshell/noctalia-shell/
 #
 # Example configuration:
 #
@@ -90,7 +90,7 @@ exec ags -c ~/.config/ags-sway/config.js
 # Basics:
 #
     # Start a terminal
-    bindsym --to-code $mod+q exec $$term
+    bindsym --to-code $mod+q exec $term
 
     # Kill focused window
     bindsym --to-code $mod+c kill
