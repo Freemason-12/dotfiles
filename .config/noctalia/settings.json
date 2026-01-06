@@ -92,7 +92,9 @@
                     "scrollingMode": "hover",
                     "showIcon": true,
                     "useFixedWidth": false
-                },
+                }
+            ],
+            "right": [
                 {
                     "hideMode": "hidden",
                     "hideWhenIdle": false,
@@ -105,9 +107,7 @@
                     "showVisualizer": false,
                     "useFixedWidth": false,
                     "visualizerType": "linear"
-                }
-            ],
-            "right": [
+                },
                 {
                     "customFont": "",
                     "formatHorizontal": "HH:mm ddd, MMM dd",
@@ -141,7 +141,7 @@
                 },
                 {
                     "deviceNativePath": "",
-                    "displayMode": "onhover",
+                    "displayMode": "alwaysShow",
                     "hideIfNotDetected": true,
                     "id": "Battery",
                     "showNoctaliaPerformance": false,
