@@ -14,21 +14,21 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-# set $term alacritty --config-file /etc/alacritty/alacritty.toml
 set $term foot
+
+# Needed utility for proper window switch keybinds
+set $sway-overfocus ~/.local/bin/sway-overfocus
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-#set $menu dmenu_path | dmenu | xargs swaymsg exec --
-# it is set in config.d/50-openSUSE.conf
 
 # Needed things for screen sharing
-exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP PATH
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
 exec /usr/libexec/polkit-mate-authentication-agent-1
 exec xhost +local:
-exec sway-audio-idle-inhibit
-exec swaync
+exec ~/.bash_profile
 
 # SwayFx blur
 blur on
@@ -49,7 +49,7 @@ shadows on
 exec nwg-look -a
 
 # bar
-exec qs -c ~/.config/quickshell/noctalia-shell/
+exec QT_QPA_PLATFORMTHEME=qt6ct qs -c /etc/xdg/quickshell/noctalia-shell/
 #
 # Example configuration:
 #
@@ -74,12 +74,13 @@ exec qs -c ~/.config/quickshell/noctalia-shell/
 #
 # Example configuration:
 #
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
+   input "2:14:SynPS/2_Synaptics_TouchPad" {
+       dwt enabled
+       tap enabled
+       natural_scroll enabled
+       middle_emulation enabled
+	accel_profile "flat"
+   }
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
@@ -124,18 +125,18 @@ exec qs -c ~/.config/quickshell/noctalia-shell/
 #   bindsym --to-code $mod+Right focus right
 
     # Move focus without without moving in tabs
-    bindsym --to-code $mod+$left exec sway-overfocus split-lt float-lt output-ls
-    bindsym --to-code $mod+$down exec sway-overfocus split-dt float-dt output-ds
-    bindsym --to-code $mod+$up exec sway-overfocus split-ut float-ut output-us
-    bindsym --to-code $mod+$right exec sway-overfocus split-rt float-rt output-rs
+    bindsym --to-code $mod+$left exec $sway-overfocus split-lt float-lt output-ls
+    bindsym --to-code $mod+$down exec $sway-overfocus split-dt float-dt output-ds
+    bindsym --to-code $mod+$up exec $sway-overfocus split-ut float-ut output-us
+    bindsym --to-code $mod+$right exec $sway-overfocus split-rt float-rt output-rs
 #   # Or use $mod+[up|down|left|right]
-    bindsym --to-code $mod+Left exec sway-overfocus split-lt float-lt output-ls
-    bindsym --to-code $mod+Down exec sway-overfocus split-dt float-dt output-ds
-    bindsym --to-code $mod+Up exec sway-overfocus split-ut float-ut output-us
-    bindsym --to-code $mod+Right exec sway-overfocus split-rt float-rt output-rs
+    bindsym --to-code $mod+Left exec $sway-overfocus split-lt float-lt output-ls
+    bindsym --to-code $mod+Down exec $sway-overfocus split-dt float-dt output-ds
+    bindsym --to-code $mod+Up exec $sway-overfocus split-ut float-ut output-us
+    bindsym --to-code $mod+Right exec $sway-overfocus split-rt float-rt output-rs
     # Switch between tabs in a window container
-    bindsym --to-code $mod+Tab exec sway-overfocus group-rw group-dw
-    bindsym --to-code $mod+Shift+Tab exec sway-overfocus group-lw group-uw
+    bindsym --to-code $mod+Tab exec $sway-overfocus group-rw group-dw
+    bindsym --to-code $mod+Shift+Tab exec $sway-overfocus group-lw group-uw
 # 
 
     # Move the focused window with the same, but add Shift
